@@ -284,6 +284,7 @@ window.daystageFontsReady=Promise.all([document.fonts.load('24px "DS Caveat"'),d
 #tasks .row.is-done .event{color:#afbdaf}
 @media(max-width:390px){#tasks .row.with-tick{grid-template-columns:44px 60px minmax(0,1fr) 24px}}
 @media print{
+ html.in-studio:has(body.focus-print){background:white!important}
  html.in-studio body.focus-print{background:white!important;margin:0}
  .focus-print>:not(.shell),.focus-print .shell>:not(.desk),.focus-print .desk>.editor,.focus-print #preview>:not(.stage),.focus-print #fitNote{display:none!important}
  .focus-print .shell,.focus-print .desk,.focus-print #preview,.focus-print .stage,.focus-print #preview .posterframe{display:block!important;position:static!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important;background:white!important;border:none!important;box-shadow:none!important}
