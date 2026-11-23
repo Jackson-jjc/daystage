@@ -324,6 +324,16 @@ window.daystageFontsReady=Promise.all([document.fonts.load('24px "DS Caveat"'),d
 .stage .posterframe{position:relative;z-index:1}
 @media(max-width:720px){.cover-title{top:36%}.cover-title h1{font-size:clamp(89px,24vw,153px)}.cover-words{top:49%}.cover-words .cover-question{font-size:clamp(18px,5.6vw,25px)}.intro .studio-wing{width:67px;right:1px;opacity:.5}.intro .phonejump{position:relative}.stage .studio-wing{width:43%}}
 @media(max-height:560px){.cover-title{top:30%}.cover-title h1{font-size:clamp(73px,16vh,95px)}.cover-words{top:46%}.cover-words .cover-answer{margin-bottom:10px}}
+
+/* Lay out the rotated signature and copy together. Reserve space for the
+   angled baseline and the full motion amplitude at every viewport width. */
+.cover-lockup{position:absolute;z-index:2;left:50%;top:49%;transform:translate(-50%,-50%);width:min(92%,940px);display:grid;justify-items:center;row-gap:clamp(29px,4.4vw,60px);pointer-events:none}
+.cover-lockup .cover-title,.cover-lockup .cover-words{position:relative;inset:auto;transform:none}
+.cover-lockup .cover-title{width:100%}
+.cover-lockup .cover-title h1{display:block;width:max-content;max-width:100%;margin:auto;font-size:clamp(82px,min(14vw,22vh),192px);line-height:.94;transform:rotate(-5deg)}
+.cover-lockup .cover-words{width:min(96%,600px)}
+@media(max-width:720px){.cover-lockup{top:48%;row-gap:31px}.cover-lockup .cover-title h1{font-size:clamp(82px,23vw,143px)}}
+@media(max-height:550px){.cover-lockup{top:48%;row-gap:21px}.cover-lockup .cover-title h1{font-size:clamp(56px,17vh,84px)}}
 </style></head><body>
 <svg class="symbols" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
 <symbol id="i-save" viewBox="0 0 24 24"><path d="M5 17v3h14v-3M12 3v12m-5-5 5 5 5-5"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol><symbol id="i-max" viewBox="0 0 24 24"><path d="M4 10V4h6m4 0h6v6m0 4v6h-6m-4 0H4v-6"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol><symbol id="i-back" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 1 8M4 4v6h6"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M12 4v15m-6-6 6 6 6-6"/></symbol></defs></svg>
@@ -333,9 +343,9 @@ window.daystageFontsReady=Promise.all([document.fonts.load('24px "DS Caveat"'),d
   <div class="cover-top"><span class="cover-brand"><svg viewBox="0 0 40 32" aria-hidden="true" fill="none"><ellipse cx="20" cy="16" rx="18" ry="6.3" transform="rotate(-29 20 16)" stroke="currentColor" stroke-width="2"/><ellipse cx="20" cy="16" rx="18" ry="6.3" transform="rotate(31 20 16)" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="16" r="3.6" fill="currentColor"/></svg> DAYSTAGE<span>®</span></span><span class="cover-top-mid">POSTER STUDIO &nbsp;/&nbsp; DAILY + WEEKLY</span><button type="button" id="motionToggle" aria-pressed="false">Pause motion</button></div>
   <div id="objects" aria-hidden="true"></div>
   <div class="backup-toys" aria-hidden="true"><b>✦</b><b>♫</b><b>✧</b><b>◈</b></div>
-  <div class="cover-title" id="typeSlot"><h1>Day Stage</h1></div>
+  <div class="cover-lockup"><div class="cover-title" id="typeSlot"><h1>Day Stage</h1></div>
   <div class="cover-words"><p class="cover-question">Ever plan your whole day, then forget what’s next?</p><p class="cover-answer">Give yourself a call sheet. Put today’s plans or your whole week on your lock screen.</p><a id="enterStudio" href="#studio">Create my poster <span aria-hidden="true">↗</span></a></div>
-  <details class="visit-badge" id="visitBadge"><summary><span aria-hidden="true">✳</span> <b class="visit-total">—</b> <span>visits</span><span class="use-summary"> · <b class="creation-total">—</b> poster uses</span></summary><p id="creationNote">Loading poster uses…</p><p id="visitNote">Loading the shared visit count…</p><p>Page views, not unique people. Refreshes count; moving between the cover and editor does not. Counts store totals and anonymous use-event IDs, never your photos or plans.</p></details><div class="cover-bottom"><span><i class="spectrum"></i> SPECTRAL SERIES</span><span>FIG. 01 &nbsp; / &nbsp; FLOAT STUDY</span></div>
+  </div><details class="visit-badge" id="visitBadge"><summary><span aria-hidden="true">✳</span> <b class="visit-total">—</b> <span>visits</span><span class="use-summary"> · <b class="creation-total">—</b> poster uses</span></summary><p id="creationNote">Loading poster uses…</p><p id="visitNote">Loading the shared visit count…</p><p>Page views, not unique people. Refreshes count; moving between the cover and editor does not. Counts store totals and anonymous use-event IDs, never your photos or plans.</p></details><div class="cover-bottom"><span><i class="spectrum"></i> SPECTRAL SERIES</span><span>FIG. 01 &nbsp; / &nbsp; FLOAT STUDY</span></div>
 </section><!--/acid-landing--><header class="topbar"><div class="nav"><div class="wordmark"><svg class="logomark" viewBox="0 0 36 36" aria-hidden="true"><path fill="currentColor" d="m18 1 2.7 11.9L30 5.6l-5.8 10.1L36 16.8l-11.7 4.3 6.6 8.5-10.5-5.2-3 11.6-2.5-12-10 6.9 6.5-10L0 18.1l11.4-3.1L5.8 5.6l9.8 6.5Z"/></svg>DAYSTAGE</div><span class="navcaption" data-k="studio"></span><div class="navright"><button type="button" class="cover-back" id="coverBack">Cover</button><span class="savebadge"><i class="dot"></i><span id="saveState"></span></span></div></div></header>
 <main class="shell"><div class="intro"><svg aria-hidden="true" focusable="false" class="studio-wing" viewBox="0 0 200 108"><defs><linearGradient id="wing-ink" x2="1" y2=".35" gradientUnits="objectBoundingBox"><stop stop-color="#62ccff"/><stop offset=".5" stop-color="#c0b7fc"/><stop offset="1" stop-color="#ff9959"/></linearGradient><g id="wing-outline" fill="none" stroke="url(#wing-ink)" stroke-linecap="round" stroke-linejoin="round"><path stroke-width="1.8" d="M99 65C82 48 48 4 12 8C4 15 16 54 30 62C43 69 71 69 93 69C67 67 42 68 43 82C47 104 77 106 98 72M101 65C120 37 163 0 189 9C195 26 175 52 165 60C148 70 119 69 107 69C134 66 158 70 153 85C144 107 122 101 102 73M98 69Q99 56 92 50M101 67Q106 51 112 51"/><path stroke-width=".8" d="M15 12Q42 44 93 65Q52 49 28 56M25 24Q53 27 69 45M47 80Q71 72 92 72M186 12Q156 47 107 65Q147 47 172 49M170 25Q151 29 136 42M150 82Q128 72 108 72"/></g></defs><use href="#wing-outline"/></svg><div><div class="overline">DAYSTAGE &nbsp;/&nbsp; POSTER STUDIO</div><h1 tabindex="-1" data-k="headline"></h1><p data-k="intro"></p></div><div class="issue">INDEPENDENT POSTER SERIES<br><b>COLLECTION № 01</b></div><a href="#preview" class="phonejump jump"><span data-k="goto"></span><svg class="ico"><use href="#i-arrow"/></svg></a></div>
 <div class="desk"><div class="editor"><nav class="workflow-nav" aria-label="Poster workflow"><a href="#plansStep">1 · Plans</a><a href="#templateStep">2 · Template</a><a href="#detailsStep">3 · Edit</a><a href="#preview">4 · Export</a></nav>
@@ -2427,13 +2437,16 @@ function printedBooks(x,y,w,h){
 const screenPortraits=new WeakMap();
 function fourInkPortrait(image,x,y,w,h){
   if(!image)return;
-  let plate=screenPortraits.get(image);
+  let sizes=screenPortraits.get(image);
+  if(!sizes){sizes=new Map();screenPortraits.set(image,sizes)}
+  const ratio=w/h;let plate=sizes.get(ratio);
   if(!plate){
     const sample=document.createElement('canvas');sample.width=112;sample.height=88;
     const c=sample.getContext('2d',{willReadFrequently:true});
     const iw=image.naturalWidth||image.width,ih=image.naturalHeight||image.height;
     if(!iw||!ih)return;
-    const side=Math.min(iw,ih);c.drawImage(image,0,0,side,side,0,0,112,88);
+    const side=Math.min(iw,ih),sw=Math.min(side,side*ratio),sh=sw/ratio;
+    c.drawImage(image,(side-sw)/2,(side-sh)/2,sw,sh,0,0,112,88);
     const px=c.getImageData(0,0,112,88).data;
     plate=document.createElement('canvas');plate.width=448;plate.height=352;
     const p=plate.getContext('2d');
@@ -2447,70 +2460,190 @@ function fourInkPortrait(image,x,y,w,h){
       }
       p.fill()
     }
-    screenPortraits.set(image,plate)
+    sizes.set(ratio,plate)
   }
   g.drawImage(plate,x,y,w,h)
 }
+const pressPortraits=new WeakMap();
+function pressPortrait(image){
+  if(!image)return null;
+  if(pressPortraits.has(image))return pressPortraits.get(image);
+  const size=180,im=document.createElement('canvas');im.width=im.height=size;
+  const ctx=im.getContext('2d',{willReadFrequently:true});
+  const side=Math.min(image.naturalWidth||image.width,image.naturalHeight||image.height);
+  if(!side)return null;
+  ctx.drawImage(image,0,0,side,side,0,0,size,size);
+  const pix=ctx.getImageData(0,0,size,size);
+  for(let i=0;i<pix.data.length;i+=4){
+    const v=Math.max(0,Math.min(255,((pix.data[i]*.30+pix.data[i+1]*.59+pix.data[i+2]*.11)-126)*1.35+126));
+    pix.data[i]=v;pix.data[i+1]=v;pix.data[i+2]=v
+  }
+  ctx.putImageData(pix,0,0);pressPortraits.set(image,im);return im
+}
+function proofStack(image,x,y,size){
+  for(let i=6;i>=0;i--){
+    const dx=x+i*2.5,dy=y-i*2.1;
+    box(dx,dy,size,size+8,i%2?'#171619':'#f5f1e9');
+    if(image)g.drawImage(image,dx+2,dy+2,size-4,size-4);
+    box(dx,dy+size-1,size,6,i===0?'#d92525':'#393537')
+  }
+}
+function issueRule(name,x,y,w,num){
+  g.font='bold 22px '+sans;
+  const tw=g.measureText(name).width;
+  label(name,x,y,22,'#cf221e',sans,'bold');
+  for(let dx=tw+8;dx<w-26;dx+=5)box(x+dx,y-5,2.6,3.5,'#d52d25');
+  label(num,x+w,y,20,'#cf221e',mono,'bold','right')
+}
+function inkBloom(x,y,r,color){
+  const grad=g.createRadialGradient(x,y,0,x,y,r);
+  grad.addColorStop(0,color);grad.addColorStop(1,'rgba(255,242,224,0)');
+  box(x-r,y-r,2*r,2*r,grad)
+}
+let folioGrain;
+function paperDust(){
+  if(!folioGrain){
+    folioGrain=document.createElement('canvas');folioGrain.width=folioGrain.height=96;
+    const c=folioGrain.getContext('2d');let seed=37;
+    for(let i=0;i<2200;i++){seed=(seed*16807)%2147483647;const x=seed%96;seed=(seed*16807)%2147483647;
+      c.fillStyle=i%2?'rgba(40,65,87,.07)':'rgba(255,255,255,.20)';c.fillRect(x,seed%96,1,1)}
+  }
+  g.fillStyle=g.createPattern(folioGrain,'repeat');g.fillRect(0,0,1600,1200)
+}
+function pencilGrid(x,y,w,h){
+  const letters=['D','A','Y','S','T','A','G','E'];const cell=Math.min(w/8,h/4);
+  for(let j=0;j<4;j++)for(let i=0;i<8;i++){
+    const xx=x+cell*i,yy=y+j*cell,solid=(i+j*3)%7===0;
+    box(xx,yy,cell-.6,cell-.6,solid?'#333036':'#f6f4e9');
+    if(!solid)label(letters[(i+j*3)%8],xx+cell/2,yy+cell*.76,cell*.72,'#39323c',mono,'bold','center');
+  }
+}
 function paintPrintEdition(canvas,data,format){
-  const wide=format==='desktop', phone=format==='phone', red=data.style==='redpress';
-  const W=wide?1280:540,H=phone?1170:720,blocks=new Map(),slots=[];
-  const ink=red?'#d72725':'#252222', body=red?'#382121':'#322d31';
-  const x=wide?155:26, top=phone?176:28, hw=wide?460:W-2*x;
-  const agendaX=wide?654:x,agendaW=wide?W-agendaX-40:hw;
-  const agendaY=wide?78:phone?553:323;
-  renderingData=data;posterLocale=data.posterLocale||'en';
-  g=canvas.getContext('2d',{willReadFrequently:true});g.save();
+  const wide=format==='desktop',phone=format==='phone',red=data.style==='redpress';
+  const W=wide?1280:540,H=phone?1170:720,top=phone?166:20,left=wide?156:18,right=W-18;
+  const blocks=new Map(),slots=[],date=dateParts(data),n=data.tasks.length;
+  renderingData=data;posterLocale=data.posterLocale||'en';g=canvas.getContext('2d',{willReadFrequently:true});g.save();
   try{
     g.setTransform(canvas.width/W,0,0,canvas.height/H,0,0);rootMatrix=g.getTransform();capture=blocks;
-    box(0,0,W,H,red?'#efeee9':'#a5cbd7');
-    if(!red){
-      const wash=g.createLinearGradient(0,0,W*.8,H);
-      ['#a3cbd9','#c5e3df','#fae4be','#e8aaad'].forEach((c,i)=>wash.addColorStop(i/3,c));
-      box(0,0,W,H,wash);
-      box(x-8,top-8,hw+16,wide?H-top-24:agendaY-top-19,'#fbf5e8');
-      box(agendaX-8,agendaY-18,agendaW+16,H-agendaY-(phone?65:18),'#fcf7ec');
-    }
-    const dates=dateParts(data);
-    label(red?'DAY STAGE   /   INDEPENDENT PRESS':'DAY STAGE   /   PRINT ROOM',x,top+9,10,ink,mono,'bold');
-    field('date',()=>label(dates.full,x+hw,top+9,12,ink,mono,'bold','right',hw*.46));
+    let ax,ay,aw,bottom,cols;
+    const image=(data.heroPhotos?.[data.style]&&window.paperHeroImage(data))||window.journalArt?.vinylPress;
+    const grey=pressPortrait(image);
     if(red){
-      decoration('DAY EDITION',value=>label(value,x-3,top+(wide?154:110),wide?160:132,ink,sans,'900','left',hw));
-      printedBooks(x,top+(wide?198:119),hw,wide?90:phone?85:66);
-    }else{
-      const photo=data.heroPhotos?.[data.style]?window.paperHeroImage(data):window.journalArt?.vinylPress;
-      const pw=hw*.54, ph=wide?250:phone?238:183;
-      fourInkPortrait(photo,x,top+24,pw,ph);
-      const sx=x+pw+10,sw=hw-pw-12;
-      label('FIG. 01    /    FOUR INKS',sx,top+42,10,'#67594c',mono,'bold');
-      decoration('Studio',value=>label(value,sx+2,top+ph*.58,wide?72:60,'#30282a',serif,'italic','left',sw));
-      decoration('notes',value=>label(value,sx+17,top+ph*.82,wide?72:62,'#30282a','"DS Caveat", cursive','normal','left',sw-24));
-      ['#d14662','#deb64d','#5682b2','#448f67'].forEach((c,i)=>box(sx+i*17,top+ph+13,12,5,c));
-    }
-    const titleY=top+(wide?385:phone?289:231);
-    field('title',()=>textBlock(data.title||'My day',x,titleY,hw,wide?36:25,wide?40:26,2,ink,red?sans:serif,red?'bold':'italic'));
-    field('subtitle',()=>textBlock(data.subtitle||'',x,titleY+(wide?91:phone?52:41),hw,wide?18:13,wide?22:14,2,body,sans));
-    if(wide){
-      const fy=H-85;
-      if(red){box(x,fy,hw,46,ink);label('VOL. 01     /     PERSONAL ARCHIVE',x+12,fy+29,14,'#fff4e9',mono,'bold')}
-      else{line(x,fy,x+hw,fy,'#8a8580',1);label('A page from my day',x,fy+32,28,body,'"DS Caveat", cursive')}
-    }
-    label(red?'Contents':'Take one',agendaX,agendaY+18,red?28:32,ink,red?sans:'"DS Caveat", cursive','bold');
-    if(red){g.save();g.setLineDash([2,4]);line(agendaX+137,agendaY+13,agendaX+agendaW-45,agendaY+13,ink,2);g.restore()}
-    label(String(data.tasks.length).padStart(2,'0'),agendaX+agendaW,agendaY+18,20,ink,mono,'bold','right');
-    const n=data.tasks.length, cols=(wide&&n>4)||(!phone&&!wide&&n>4)?2:1;
-    const rows=Math.max(1,Math.ceil(n/cols)),gridY=agendaY+40,gap=16,cw=(agendaW-(cols-1)*gap)/cols;
-    const step=(H-(phone?78:25)-gridY)/rows;
-    data.tasks.forEach(([time,desc,id],i)=>{
-      const sx=agendaX+(i%cols)*(cw+gap),sy=gridY+Math.floor(i/cols)*step;
-      if(!red){
-        const tabH=Math.min(step-9,43);
-        box(sx,sy,23,tabH,'#302c2b');
-        box(sx,sy,23,4,['#dc8593','#dfb54e','#8bb2da','#87b698'][i%4]);
-        label(String(i+1).padStart(2,'0'),sx+11.5,sy+tabH*.66,11,'#fff6e7',mono,'bold','center');
-        g.save();g.setLineDash([2,4]);line(sx+10,sy-2,sx+cw-3,sy-2,'#bbb3a8',.8);g.restore()
+      const redInk='#d72222',paper='#efeee9',cw=wide?498:right-left;
+      box(0,0,W,H,paper);
+      label('DAY STAGE   /   INDEPENDENT PRESS',left,top+9,10,redInk,mono,'bold');
+      field('date',()=>label(date.full,left+cw,top+9,13,redInk,mono,'bold','right'));
+      label('1.',left,top+45,25,redInk,sans,'bold');
+      const proofSize=wide?94:phone?75:46;
+      proofStack(grey,left+cw-proofSize-20,top+36,proofSize);
+      const headline=top+(wide?190:phone?162:116);
+      field('title',()=>textBlock(data.title||'The daily issue',left,headline-34,cw-proofSize-36,wide?31:22,wide?32:22,2,redInk,sans,'bold'));
+      const typeH=wide?144:phone?157:106;
+      g.save();g.translate(left,headline);g.scale(1,1.45);
+      decoration('DAY EDITION',v=>label(v,0,typeH*.65,typeH*.91,redInk,sans,'900','left',cw));g.restore();
+      const shelf= headline+typeH+1;
+      printedBooks(left,shelf,cw,wide?76:phone?68:38);
+      const noteY=shelf+(wide?105:phone?94:58);
+      field('subtitle',()=>textBlock(data.subtitle||'',left,noteY,cw-5,14,16,2,'#662723',sans));
+      ax=wide?left+cw+35:left;aw=right-ax;ay=wide?top+36:noteY+48;
+      issueRule('Running order',ax,ay,aw,'2');
+      ay+=17;bottom=H-(phone?136:wide?131:n<=4?115:70);
+      cols=wide?1:!phone&&n>4?2:1;
+      // The stepped book fan reprises the event cards in chapter four.
+      const fy=bottom+14;
+      issueRule('Event proofs',ax,fy+15,aw,'3');
+      const fanSize=wide?43:phone?42:n<=4?32:17,base=H-(phone?39:wide?28:n<=4?22:13);
+      for(let j=0;j<3;j++){
+        const fx=ax+(j+.5)*aw/3;
+        for(let z=6;z>=0;z--){const inset=z*fanSize*.12;
+          for(const sign of [-1,1]){const px=fx-fanSize/2+sign*inset,py=base-fanSize+inset*.8;
+            box(px,py,fanSize,fanSize,j===1?'#242322':'#d92b23');
+            if(grey){const crop=[110,155,94][j];g.drawImage(grey,[16,4,66][j],[0,12,46][j],crop,crop,px+1,py+1,fanSize-2,fanSize-4)}}
+        }
       }
-      const pad=red?0:30,slot={x:sx+pad,y:sy+3,w:cw-pad-2,h:step-8};slots.push(slot);
-      field('task-'+id,()=>agendaBlock(time,desc,slot.x,slot.y,slot.w,slot.h,wide?25:phone?23:20,body,red?ink:'#614f68',red?sans:serif,'500'))
+      if(n<=4){
+        const margin=aw*.31;
+        label('ISSUE',ax,ay+14,10,redInk,mono,'bold');
+        label(date.day,ax,ay+61,56,redInk,sans,'900','left',margin-10);
+        label(date.weekday,ax,ay+80,14,redInk,mono,'bold');
+        ax+=margin;aw-=margin
+      }
+      if(wide){issueRule('Imprint',left,H-119,cw,'4');proofStack(grey,left+8,H-89,54);
+        label('PERSONAL ARCHIVE',left+93,H-57,17,redInk,mono,'bold');
+        label(date.year+'    /    DAY STAGE PRESS',left+93,H-35,12,redInk,mono)}
+    }else{
+      const gutter=wide?12:8,rail=wide?235:phone?135:144;
+      const mid=wide?239:0,mainX=left+rail+gutter+mid+(wide?gutter:0),paperTop=top+5;
+      const floor=H-(phone?52:14),spineX=wide?left+rail+gutter:mainX;
+      box(0,0,W,H,'#9ac6d7');
+      inkBloom(W*.6,H*.2,W*.52,'#eadad1');inkBloom(W*.71,H*.9,W*.7,'#ee9c91');
+      box(left,paperTop,rail,floor-paperTop,'#f4eee2');
+      if(wide)box(spineX,paperTop,mid,floor-paperTop,'#fcf7ef');
+      box(mainX,paperTop,right-mainX,floor-paperTop,'#fcf5e9');
+      g.save();g.beginPath();g.rect(left,paperTop,right-left,floor-paperTop);g.clip();
+      inkBloom(left+rail*.2,paperTop+H*.4,rail*1.1,'#efa6ac');inkBloom(right-12,floor-20,(right-mainX)*.86,'#f4b370');
+      inkBloom(mainX+25,paperTop+57,130,'#efa9b9');
+      inkBloom(right-24,paperTop+166,145,'#fac79a');
+      inkBloom(left+rail*.45,floor-120,rail*.95,'#9bbcdb');g.restore();paperDust();
+      const rx=left+7,rw=rail-14,ph=wide?203:phone?197:159;
+      label('PRINT ROOM   /   01',rx,top+24,10,'#34303b',mono,'bold');
+      fourInkPortrait(image,rx,top+38,rw,ph);
+      decoration('Studio',v=>label(v,rx+2,top+ph-11,wide?58:44,'#282128','"DS Caveat", cursive','bold','left',rw-4));
+      decoration('notes',value=>{
+        const size=wide?68:53,letters=Array.from(value),initial=letters.shift()||'',tail=letters.join('');
+        g.save();g.translate(rx+5,top+ph+89);g.font='italic '+size+'px '+contentFont(value,serif);
+        g.scale(Math.min(1,(rw-10)/Math.max(1,g.measureText(value).width)),1);
+        const initialWidth=g.measureText(initial).width;
+        label(initial,0,0,size,'#30262e',serif,'italic');
+        if(tail){
+          g.fillStyle=g.strokeStyle='#664959';g.lineWidth=1.05;
+          const held=noteRun(tail,initialWidth,0,size,g.strokeStyle);
+          if(capture&&fieldKey){const run=capture.get(fieldKey).runs.at(-1);run.stroke=true;run.lineWidth=g.lineWidth}
+          if(!held)g.strokeText(tail,initialWidth,0)
+        }
+        g.restore()
+      });
+      // A pencil outline beneath the filled signature, as on a marked-up proof.
+      g.save();g.strokeStyle='#986975';g.lineWidth=.9;g.beginPath();
+      g.moveTo(rx+4,top+ph+104);g.bezierCurveTo(rx+rw*.41,top+ph+92,rx+rw*.89,top+ph+96,rx+rw-5,top+ph+99);
+      g.stroke();g.restore();
+      label('INDEX   /   A—Z',rx,top+ph+130,9,'#6e4450',mono,'bold');
+      pencilGrid(rx,top+ph+140,rw,rw*.53);
+      const sketchY=top+ph+160+rw*.53,sketchH=floor-112-sketchY;
+      if(sketchH>60){
+        const sh=Math.min(sketchH,123),sw=rw*.65;g.save();g.translate(rx+rw*.12,sketchY+8);g.rotate(-.09);
+        box(4,3,sw,sh,'#c7b8ae');box(0,0,sw,sh,'#fff9e9');
+        if(grey)g.drawImage(grey,33,12,116,120,4,4,sw-8,sh*.64);
+        label('study / 01',5,sh-8,Math.min(17,sh*.24),'#995954','"DS Caveat", cursive');g.restore()
+      }
+      const stampsY=floor-94;label('COLOUR PROOF',rx,stampsY-12,9,'#5d4b50',mono);
+      ['#d14662','#deb64d','#5682b2','#448f67'].forEach((v,i)=>box(rx+i*rw/4,stampsY,rw/4-2,12,v));
+      label('Field copy',rx,stampsY+48,24,'#50444e','"DS Caveat", cursive','normal','left',rw);
+      const tx=spineX+12,tw=(wide?mid:right-mainX)-24;
+      field('date',()=>label(date.full,tx,top+27,13,'#a63047',mono,'bold','left',tw));
+      field('title',()=>textBlock(data.title||'My studio day',tx,top+76,tw,wide?33:29,35,3,'#332933',serif,'italic'));
+      field('subtitle',()=>textBlock(data.subtitle||'',tx,top+177,tw,15,19,3,'#584953','"DS Kalam", cursive'));
+      if(wide){label('Process',tx,top+338,40,'#5d4448',serif,'italic','left',tw);
+        inkBloom(tx+tw*.45,top+444,105,'#ecd2ac');pencilGrid(tx,top+375,tw,tw*.52)}
+      ax=mainX+11;aw=right-ax-10;const tabY=wide?top+29:top+(phone?274:235);
+      box(ax,tabY,aw,36,'#252426');
+      decoration('Take one',v=>label(v,ax+9,tabY+26,25,'#fff5df','"DS Caveat", cursive'));
+      const tabW=Math.min(38,(aw*.55)/Math.max(n,1));
+      for(let i=0;i<n;i++){
+        const xx=ax+aw-(n-i)*tabW,depth=i===1?22:15;
+        box(xx,tabY+35,tabW-1,depth,'#252426');
+        label(String(i+1).padStart(2,'0'),xx+tabW/2,tabY+46,9,'#fff7e9',mono,'normal','center')
+      }
+      ay=tabY+65;bottom=floor-12;cols=1
+    }
+    const rows=Math.max(1,Math.ceil(n/cols)),gap=15,cw=(aw-gap*(cols-1))/cols;
+    const step=(bottom-ay)/rows;
+    data.tasks.forEach(([time,desc,id],i)=>{
+      const sx=ax+(i%cols)*(cw+gap),sy=ay+Math.floor(i/cols)*step;
+      const pad=red?(cols===1?32:21):0;
+      if(red)label(String(i+1).padStart(2,'0'),sx,sy+11,10,'#ae3330',mono);
+      const slot={x:sx+pad,y:sy+1,w:cw-pad,h:step-5};slots.push(slot);
+      field('task-'+id,()=>agendaBlock(time,desc,slot.x,slot.y,slot.w,slot.h,wide?23:phone?21:19,red?'#2a2121':'#302d36',red?'#c82320':'#904458',red?sans:serif,'500'))
     });
     capture=null;window.finishPaper(g,blocks,data);canvas.__dsLayout={w:W,h:H,format,slots}
   }finally{capture=null;fieldKey=null;g.restore()}
