@@ -369,7 +369,7 @@ window.daystageFontsReady=Promise.all([document.fonts.load('24px "DS Caveat"'),d
 <div id="aiReview" tabindex="-1" hidden><div class="ai-step"><span>REVIEW YOUR DRAFT</span></div><p class="ai-help">Check the times and wording below. Your poster changes only when you apply.</p><label class="ai-label" for="aiTitle">Suggested title</label><input id="aiTitle" maxlength="34"><label class="ai-label" for="aiSubtitle">Short note</label><input id="aiSubtitle" maxlength="80"><div id="aiTasks"></div><p id="aiChecks" class="ai-help" role="status"></p><label class="ai-template-check"><input type="checkbox" id="aiUseTemplate"><span id="aiTemplateLabel"></span></label><details class="candidate-preview"><summary>Preview this draft on your poster</summary><canvas id="aiCanvas" width="540" height="720" role="img" aria-label="Candidate poster, not yet applied"></canvas></details><div class="ai-buttons"><button type="button" id="aiApply" class="ai-primary">Apply plans to poster</button><button type="button" id="aiDiscard" class="ai-secondary">Discard draft</button></div></div><button type="button" id="aiUndo" class="textbtn" hidden>Undo draft edit</button><details id="aiUsage" class="secondary-options"><summary>Connection, privacy & request receipt</summary><p class="ai-help">Only checked notes, language and tone go to OpenRouter and its selected provider. Photos and recordings are not sent. Free models have limits and may be busy. No paid-model fallback, automatic top-up or Day Stage API fees.</p><p class="ai-help">Check the spending limit and expiry before authorizing. Connection stays in memory for this page only; refreshing requires reconnecting. Local line import copies your wording without AI interpretation.</p><p id="aiReceipt" class="ai-help" hidden></p><div class="ai-links"><a id="aiLogs" href="https://openrouter.ai/logs" target="_blank" rel="noopener noreferrer">Check model & cost in OpenRouter</a><a href="https://openrouter.ai/openrouter/free" target="_blank" rel="noopener noreferrer">Free models & limits</a><a href="https://openrouter.ai/settings/keys" target="_blank" rel="noopener noreferrer">Manage / revoke access</a></div></details>
 <details id="aiManual"><summary>Or use another AI chat · copy & paste</summary><button type="button" id="aiCopy" class="ai-primary">Copy prompt ↗</button><p class="ai-help">Paste it into the AI chat you already use, then copy its whole reply. This alternative uses your external chat. Your AI service’s account rules and limits apply.</p><details id="aiPromptPanel"><summary>View / manually copy prompt</summary><textarea id="aiPrompt" readonly rows="6" aria-label="Prompt to copy"></textarea></details><p class="ai-help">In this copy-and-paste mode, only the words you choose to copy leave this page. Photos stay here. Avoid including private information you do not want to share with your AI service.</p><div class="ai-step"><span>PASTE YOUR REPLY</span></div><label class="ai-label" for="aiReply">Paste the complete AI reply</label><textarea id="aiReply" maxlength="20000" rows="3" placeholder="Paste the reply here. We’ll turn it into editable fields."></textarea><button type="button" id="aiRead" class="ai-secondary">Review draft</button></details><a class="manual-edit-link" href="#plansStep">Back to my plans</a>
 </div></details></section>
-<section class="block" id="templateStep"><div class="sectionhead"><h2><span class="index">02</span><span data-k="theme"></span></h2><span class="subtag">TEMPLATES / 11</span></div><p class="template-guide">Eleven English templates. Your plans carry over.</p><div class="templates" id="styles"></div>
+<section class="block" id="templateStep"><div class="sectionhead"><h2><span class="index">02</span><span data-k="theme"></span></h2><span class="subtag">TEMPLATES / 13</span></div><p class="template-guide">Thirteen English templates. Your plans carry over.</p><div class="templates" id="styles"></div>
 <details class="language-editions" id="languageEditions"><summary>Other languages <span>中文 · 日本語 · 한국어</span></summary><p>Same studio, a different writing rhythm. Each example applies its text and layout; your photos stay. Undo is available.</p><div id="languageCards"></div><button type="button" class="textbtn" id="restoreLanguageText" hidden>Restore previous language text</button></details><p class="template-guide" id="templateGuide"></p><p class="template-guide" id="languageDraftNotice" hidden></p><div class="comparefoot"><button type="button" class="compare-open" id="compareAll" disabled><svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor"><rect x="1.5" y="2.5" width="5" height="11"/><rect x="9.5" y="2.5" width="5" height="11"/></svg><span data-k="compare">Compare prints</span></button><span data-k="compareHint"></span><button type="button" id="openPaper" disabled class="paper-launch" data-k="editPaper" hidden></button></div><details id="layoutSource" class="layout-source"><summary><span data-k="sourceLabel"></span></summary><p id="sourceNote"></p><a id="sourceLink" target="_blank" rel="noopener noreferrer"></a></details><a class="workflow-next" href="#detailsStep">Next: edit your poster</a></section>
 <section class="block" id="detailsStep"><div class="sectionhead"><h2><span class="index">03</span><span data-k="details"></span></h2><span class="subtag">DETAILS</span></div><div class="poster-language"><label for="posterLocale">Poster typography</label><select id="posterLocale"><option value="en">English</option><option value="zh">Chinese · 中文</option><option value="ja">Japanese · 日本語</option><option value="ko">Korean · 한국어</option></select><small>Changes type, not your words. For English sample text, choose a scenario and Apply example.</small></div><div class="font-pairing"><label for="fontPairing">Font pairing <span>ONE CLICK</span></label><select id="fontPairing" aria-describedby="pairingHint"></select><div id="pairingSample" aria-hidden="true"><strong>A day worth keeping</strong><span>09:00 · Coffee & a little daydream</span></div><small id="pairingHint">Keep the template pairing, or choose a different mood.</small></div><div class="formrow"><div class="field"><label for="date" data-k="date"></label><input id="date" type="date"></div><div class="field"><label for="title" data-k="title"></label><input id="title" maxlength="34"></div></div><div class="field"><label for="subtitle" data-k="note"></label><input id="subtitle" maxlength="80"></div></section>
 <section class="block ai-block image-options" aria-label="Optional image tools"><div class="ai-content"><details id="aiImage" class="ai-direct"><summary>Make an image · bring your own API</summary><p class="ai-help">Optional. Use your own image-model account and pay your provider directly. Uploading your own photos in Edit poster is always available.</p><label class="ai-label" for="imageProvider">Image API format</label><select id="imageProvider"><option value="router">OpenRouter Image API</option><option value="custom">OpenAI-compatible image API</option></select><label class="ai-label" for="imageEndpoint">Full generation endpoint</label><input id="imageEndpoint" type="url" value="https://openrouter.ai/api/v1/images" readonly spellcheck="false"><p class="ai-links"><a href="https://openrouter.ai/models?output_modalities=image" target="_blank" rel="noopener noreferrer">Browse OpenRouter image models & prices</a></p><label class="ai-label" for="imageModel">Your image model ID</label><input id="imageModel" placeholder="Enter the model ID from your provider" maxlength="160" autocomplete="off" spellcheck="false"><label class="ai-label" for="imageKey">Your API key</label><input id="imageKey" type="password" autocomplete="off" spellcheck="false" placeholder="Or use your connected OpenRouter account"><p class="ai-help">Key stays on this page, is cleared when sent, and goes only to the endpoint you select. Never enter a key for a service you do not trust. Custom APIs must support browser requests (CORS); there is no Day Stage proxy.</p><label class="ai-label" for="imagePrompt">Describe an image for your poster</label><textarea id="imagePrompt" rows="3" maxlength="1500" placeholder="A pressed blue flower on cream paper, photographed in soft daylight"></textarea><p id="imageDestination" class="ai-help"></p><label class="ai-template-check"><input type="checkbox" id="imageConsent"><span>I checked my provider’s price and authorize one image request using my own account. A failed or cancelled request may still be charged.</span></label><div class="ai-buttons"><button type="button" id="imageGenerate" class="ai-secondary">Generate with my account</button><button type="button" id="imageCancel" class="ai-secondary" hidden>Stop waiting</button></div><p id="imageStatus" class="ai-help" role="status" aria-live="polite"></p><div id="imageReview" hidden><img id="imageResult" alt="Generated image to review before adding to your poster"><p class="ai-help">Nothing has been added yet. Apply to the current poster, then move or replace it in Edit poster.</p><div class="ai-buttons"><button type="button" id="imageAdd" class="ai-primary">Add to current poster</button><button type="button" id="imageHero" class="ai-secondary">Replace current main image</button><button type="button" id="imageDiscard" class="ai-secondary">Discard image</button></div></div></details></div></section></div>
@@ -403,8 +403,8 @@ Manga portrait scale, paper overlaps and vinyl: https://www.pinterest.com/pin/76
 <script>
 (()=>{
 'use strict';
-const $=s=>document.querySelector(s),icon=k=>'<svg class="ico" aria-hidden="true"><use href="#i-'+k+'"/></svg>',keys=["backstage","scrapbook","editorial","spectral","rave","zine","bluejournal","traveljournal","gardenjournal","mangajournal","focus"],codes=["BACKSTAGE PASS","TAPE JOURNAL","RECORD ISSUE","THERMAL WINGS","ACID LINEUP","COPY ZINE","BLUE MARGIN","TRAVEL LOG","GARDEN NOTES","PANEL DIARY","FOCUS"];
-const L={zh:{paperTitle:"拼贴工作台",openPaper:"照片与贴纸",editPaper:"打开拼贴台",done:"完成",photos:"自己的照片",addPhoto:"＋ 添加照片",photoHint:"可多选 JPG、PNG、WebP 等图片，照片只保存在这台设备。",materials:"纸品素材",tapes:"胶带",stickers:"贴纸",layers:"已贴上的素材",size:"大小",turn:"旋转",front:"移到最前",back:"移到最后",erase:"移除",frameStyle:"相纸边框",framePrint:"白边相纸",framePlain:"无边框",frameFilm:"黑色胶片",moveHint:"在海报上拖动素材，或选中后按方向键微调；Shift 加快。",allStyles:"全部 10",paperStyles:"手账拼贴 6",stageStyles:"舞台印刷 4",compare:'整张对比',compareHint:'用当前行程对比整张海报',compareTitle:'选择海报版式',use:'选用',active:'当前',studio:'海报工作室',headline:'每日行程海报',intro:'挑一张喜欢的版式，把一天的安排印成自己的海报。',goto:'看预览',theme:'选择海报模板',details:'海报信息',date:'日期',title:'海报标题',note:'一句话备注（选填）',agenda:'行程清单',add:'添加一条行程',timehint:'时间可填「待定」或「全天」',sample:'填入示例',live:'海报预览',download:'下载 PNG',private:'免费使用 · 无需登录 · 内容保存在此浏览器',names:["后台通行证","胶带拼贴手账","黑胶日刊","热谱蝶影","荧光演出表","复印拼贴志","蓝晒杂志","旅行路线手记","花园绘本","漫画分镜","专注"],sampleTitle:'我的排练日',sampleNote:'把喜欢的事，排进今天。',sampleTasks:[['09:00','早餐和晨间歌单'],['10:30','练习室 · 舞蹈排练'],['14:00','拍摄舞台定妆照'],['16:30','去唱片店逛一圈'],['20:00','整理今天的灵感']],local:'本地草稿',saved:'草稿已保存',nosave:'此处无法保存草稿',zoom:'放大查看海报',close:'关闭预览',remove:'删除行程',time:'时间',event:'行程内容',timeph:'待定',eventph:'写下这条安排',titleph:'为这一天起个名字',noteph:'写给自己的一句话',applied:'已填入示例',deleted:'已删除这条行程',undo:'撤销',exported:'已生成 PNG，浏览器将开始下载。',failed:'PNG 生成失败，请重试。',max:'最多可添加 8 条行程',language:'切换为英文',blank:'未填写'},en:{paperTitle:"Paper Lab",openPaper:"Photos & stickers",editPaper:"Edit photos & text",done:"Done",photos:"Your photos",addPhoto:"＋ Add photos",photoHint:"Choose one or more JPG, PNG or WebP images. Photos stay on this device.",materials:"Paper supplies",tapes:"Washi tape",stickers:"Stickers",layers:"Placed items",size:"Size",turn:"Rotation",front:"To front",back:"To back",erase:"Remove",frameStyle:"Border",framePrint:"White print",framePlain:"Borderless",frameFilm:"Film strip",moveHint:"Drag pieces on the poster or use the arrow keys. Hold Shift for larger steps.",allStyles:"All 10 · English",paperStyles:"Collage 6",stageStyles:"Print 4",compare:'Compare my draft',compareHint:'Compare layouts with your schedule',compareTitle:'Choose a poster layout',use:'Use',active:'Selected',studio:'Poster studio',headline:'Your plans, in print',intro:'Make a call sheet for a day or a week. Keep your next cue on your lock screen or beside your desk.',goto:'Preview',theme:'Choose a template',details:'Poster details',date:'Date',title:'Poster title',note:'A short note (optional)',agenda:'Plans & moments',add:'Add a schedule item',timehint:'Times can also be “TBA” or “All day”.',sample:'Apply example',live:'Poster preview',download:'Download PNG',private:'Free · No account · Saved in this browser',names:["Backstage pass","Tape journal","Record issue","Thermal wings","Acid lineup","Copy zine","Blue journal","Travel diary","Garden notes","Panel diary","Focus"],sampleTitle:'Little things, big day',sampleNote:'A few plans. A little room to wander.',sampleTasks:[['09:00','Coffee & music'],['10:30','Make something new'],['14:00','A walk with friends'],['16:30','Find a new record'],['20:00','Save today’s moments']],local:'Local draft',saved:'Draft saved',nosave:'Draft storage unavailable',zoom:'Enlarge poster',close:'Close preview',remove:'Delete item',time:'Time',event:'Schedule item',timeph:'TBA',eventph:'Add your plans',titleph:'Give your day a title',noteph:'A little note to yourself',applied:'Sample applied',deleted:'Item removed',undo:'Undo',exported:'PNG ready. Your browser will start the download.',failed:'Could not create PNG. Please retry.',max:'Up to 8 items',language:'Switch to Chinese',blank:'Blank'}};
+const $=s=>document.querySelector(s),icon=k=>'<svg class="ico" aria-hidden="true"><use href="#i-'+k+'"/></svg>',keys=["backstage","scrapbook","editorial","spectral","rave","zine","bluejournal","traveljournal","gardenjournal","mangajournal","focus","redpress","inkfolio"],codes=["BACKSTAGE PASS","TAPE JOURNAL","RECORD ISSUE","THERMAL WINGS","ACID LINEUP","COPY ZINE","BLUE MARGIN","TRAVEL LOG","GARDEN NOTES","PANEL DIARY","FOCUS","RED EDITION","STUDIO NOTES"];
+const L={zh:{paperTitle:"拼贴工作台",openPaper:"照片与贴纸",editPaper:"打开拼贴台",done:"完成",photos:"自己的照片",addPhoto:"＋ 添加照片",photoHint:"可多选 JPG、PNG、WebP 等图片，照片只保存在这台设备。",materials:"纸品素材",tapes:"胶带",stickers:"贴纸",layers:"已贴上的素材",size:"大小",turn:"旋转",front:"移到最前",back:"移到最后",erase:"移除",frameStyle:"相纸边框",framePrint:"白边相纸",framePlain:"无边框",frameFilm:"黑色胶片",moveHint:"在海报上拖动素材，或选中后按方向键微调；Shift 加快。",allStyles:"全部 10",paperStyles:"手账拼贴 6",stageStyles:"舞台印刷 4",compare:'整张对比',compareHint:'用当前行程对比整张海报',compareTitle:'选择海报版式',use:'选用',active:'当前',studio:'海报工作室',headline:'每日行程海报',intro:'挑一张喜欢的版式，把一天的安排印成自己的海报。',goto:'看预览',theme:'选择海报模板',details:'海报信息',date:'日期',title:'海报标题',note:'一句话备注（选填）',agenda:'行程清单',add:'添加一条行程',timehint:'时间可填「待定」或「全天」',sample:'填入示例',live:'海报预览',download:'下载 PNG',private:'免费使用 · 无需登录 · 内容保存在此浏览器',names:["后台通行证","胶带拼贴手账","黑胶日刊","热谱蝶影","荧光演出表","复印拼贴志","蓝晒杂志","旅行路线手记","花园绘本","漫画分镜","专注","朱红书目","四色纸签"],sampleTitle:'我的排练日',sampleNote:'把喜欢的事，排进今天。',sampleTasks:[['09:00','早餐和晨间歌单'],['10:30','练习室 · 舞蹈排练'],['14:00','拍摄舞台定妆照'],['16:30','去唱片店逛一圈'],['20:00','整理今天的灵感']],local:'本地草稿',saved:'草稿已保存',nosave:'此处无法保存草稿',zoom:'放大查看海报',close:'关闭预览',remove:'删除行程',time:'时间',event:'行程内容',timeph:'待定',eventph:'写下这条安排',titleph:'为这一天起个名字',noteph:'写给自己的一句话',applied:'已填入示例',deleted:'已删除这条行程',undo:'撤销',exported:'已生成 PNG，浏览器将开始下载。',failed:'PNG 生成失败，请重试。',max:'最多可添加 8 条行程',language:'切换为英文',blank:'未填写'},en:{paperTitle:"Paper Lab",openPaper:"Photos & stickers",editPaper:"Edit photos & text",done:"Done",photos:"Your photos",addPhoto:"＋ Add photos",photoHint:"Choose one or more JPG, PNG or WebP images. Photos stay on this device.",materials:"Paper supplies",tapes:"Washi tape",stickers:"Stickers",layers:"Placed items",size:"Size",turn:"Rotation",front:"To front",back:"To back",erase:"Remove",frameStyle:"Border",framePrint:"White print",framePlain:"Borderless",frameFilm:"Film strip",moveHint:"Drag pieces on the poster or use the arrow keys. Hold Shift for larger steps.",allStyles:"All 10 · English",paperStyles:"Collage 6",stageStyles:"Print 4",compare:'Compare my draft',compareHint:'Compare layouts with your schedule',compareTitle:'Choose a poster layout',use:'Use',active:'Selected',studio:'Poster studio',headline:'Your plans, in print',intro:'Make a call sheet for a day or a week. Keep your next cue on your lock screen or beside your desk.',goto:'Preview',theme:'Choose a template',details:'Poster details',date:'Date',title:'Poster title',note:'A short note (optional)',agenda:'Plans & moments',add:'Add a schedule item',timehint:'Times can also be “TBA” or “All day”.',sample:'Apply example',live:'Poster preview',download:'Download PNG',private:'Free · No account · Saved in this browser',names:["Backstage pass","Tape journal","Record issue","Thermal wings","Acid lineup","Copy zine","Blue journal","Travel diary","Garden notes","Panel diary","Focus","Red Press","Studio Notes"],sampleTitle:'Little things, big day',sampleNote:'A few plans. A little room to wander.',sampleTasks:[['09:00','Coffee & music'],['10:30','Make something new'],['14:00','A walk with friends'],['16:30','Find a new record'],['20:00','Save today’s moments']],local:'Local draft',saved:'Draft saved',nosave:'Draft storage unavailable',zoom:'Enlarge poster',close:'Close preview',remove:'Delete item',time:'Time',event:'Schedule item',timeph:'TBA',eventph:'Add your plans',titleph:'Give your day a title',noteph:'A little note to yourself',applied:'Sample applied',deleted:'Item removed',undo:'Undo',exported:'PNG ready. Your browser will start the download.',failed:'Could not create PNG. Please retry.',max:'Up to 8 items',language:'Switch to Chinese',blank:'Blank'}};
 const today=()=>{const t=new Date();return [t.getFullYear(),('0'+(t.getMonth()+1)).slice(-2),('0'+t.getDate()).slice(-2)].join('-')},clone=x=>JSON.parse(JSON.stringify(x)),str=(v,n)=>typeof v==='string'?v.slice(0,n):'';
 Object.assign(L.zh,{swap:'换素材',swapPhoto:'换成照片',restorePieces:'还原模板预贴素材',openPaper:'文字与拼贴',layers:'文字与图层',fontSize:'字号',inkLabel:'字色',resetType:'恢复这组文字的原版式',replaceHero:'替换模板主图',resetHero:'恢复原画',typeHint:'点选海报上的字即可拖动，方向键可微调。时间和行程一起移动。'});
 Object.assign(L.en,{swap:'Replace',swapPhoto:'Use a photo',restorePieces:'Restore template objects',openPaper:'Edit poster',layers:'Text & layers',fontSize:'Type size',inkLabel:'Ink',resetType:'Reset this text',replaceHero:'Replace main image',resetHero:'Restore artwork',typeHint:'Select text on the poster and drag. Nudge with arrow keys. Each time stays with its event.'});
@@ -423,9 +423,9 @@ const requestedTemplate=new URLSearchParams(location.search).get('template');if(
 const journalKeys=['scrapbook','zine','bluejournal','traveljournal','gardenjournal','mangajournal'], paperImages=new Map(), failedImages=new Set(), removedPhotos=new Set();
 let previewBlocks=new Map();
 
-const uses={backstage:'Concerts & meetups',scrapbook:'Everyday photo notes',editorial:'Music & concert days',spectral:'Colorful days out',rave:'Lineups & party plans',zine:'A day as a news story',bluejournal:'Study & creative notes',traveljournal:'Trips & photo walks',gardenjournal:'Slow days outdoors',mangajournal:'Comic-style day stories',focus:'Quiet study & workdays'};
+const uses={backstage:'Concerts & meetups',scrapbook:'Everyday photo notes',editorial:'Music & concert days',spectral:'Colorful days out',rave:'Lineups & party plans',zine:'A day as a news story',bluejournal:'Study & creative notes',traveljournal:'Trips & photo walks',gardenjournal:'Slow days outdoors',mangajournal:'Comic-style day stories',focus:'Quiet study & workdays',redpress:'Publishing & reading days',inkfolio:'Creative notes & studio days'};
 const examples={study:{title:'A little progress today',subtitle:'One thing at a time. Make room for a break.',tasks:[['09:00','Read & take notes'],['11:00','Work on the assignment'],['13:00','Lunch away from the desk'],['15:00','Library study session'],['18:00','Close the laptop & unwind']]},slowday:{title:'A softer kind of Sunday',subtitle:'Small plans. Plenty of breathing room.',tasks:[['09:00','Coffee by the window'],['11:00','Walk & notice the flowers'],['13:00','Cook something comforting'],['15:00','Read a few pages'],['18:00','Keep one little memory']]},anime:{title:'A day in my own world',subtitle:'Every ordinary day gets its own story.',tasks:[['09:00','Breakfast & a new chapter'],['11:00','Study at the library'],['14:00','Sketch a favorite character'],['17:00','An episode & a snack'],['20:00','Make a plan for tomorrow']]},creative:{title:L.en.sampleTitle,subtitle:L.en.sampleNote,tasks:L.en.sampleTasks},concert:{title:'THE NIGHT IS OURS',subtitle:'The friends, the music, the moments.',tasks:[['12:00','Pack tickets & lightstick'],['14:00','Meet friends for lunch'],['16:00','Photos outside the venue'],['18:00','Doors open'],['19:00','Sing every word'],['22:00','One last photo together']]},dayout:{title:'A little city escape',subtitle:'A camera, a good playlist, no rush.',tasks:[['09:00','Train into the city'],['10:30','Find a new cafe'],['12:00','A gallery & a slow walk'],['15:00','Browse the record shop'],['18:00','Save a sunset photo']]}};
-const englishScenarios={backstage:'concert',scrapbook:'creative',editorial:'concert',spectral:'dayout',rave:'concert',zine:'creative',bluejournal:'study',traveljournal:'dayout',gardenjournal:'slowday',mangajournal:'anime',focus:'study'};
+const englishScenarios={backstage:'concert',scrapbook:'creative',editorial:'concert',spectral:'dayout',rave:'concert',zine:'creative',bluejournal:'study',traveljournal:'dayout',gardenjournal:'slowday',mangajournal:'anime',focus:'study',redpress:'study',inkfolio:'creative'};
 function englishPrint(style){return {...defaults,...clone(examples[englishScenarios[style]]),style,lang:'en',posterLocale:'en',lettering:{},typePairings:{},collages:{},heroPhotos:{}}}
 let previousLanguageText=null;
 try{const p=JSON.parse(localStorage.getItem('ds-language-text')||'null');if(p&&['zh','ja','ko'].includes(p.posterLocale)&&typeof p.title==='string'&&typeof p.subtitle==='string'&&Array.isArray(p.tasks)&&p.tasks.length<=8&&p.tasks.every(t=>Array.isArray(t)&&t.length>=2&&t.slice(0,2).every(v=>typeof v==='string')))previousLanguageText=p}catch{}
@@ -1051,6 +1051,8 @@ function flushPreview(){if(pending!==null){cancelAnimationFrame(pending);pending
 function dismiss(){clearTimeout(timer);$('#status').replaceChildren();undo=null}
 function toast(message,old){dismiss();const box=$('#status');box.textContent=l()[message];if(old){undo=old;const b=document.createElement('button');b.textContent=l().undo;b.onclick=()=>{if(undo){d=undo;dismiss();save();refresh()}};box.appendChild(b)}timer=setTimeout(dismiss,old?11000:4500)}
 const designCases={
+ redpress:['出版目录','Publishing House · supplied reference',null,'朱红通栏刊头、书封带与目录点线。','A tall red masthead, a shelf of small covers and dotted contents leaders.'],
+ inkfolio:['四色纸签','Gryn-Vasilisa · supplied reference',null,'四色网点图和手写签字领入纸签。','One image in four inks introduces the handwritten heading and perforated schedule.'],
  focus:['Canva · Grey Simple Organizer','Canva · Grey Simple Organizer','https://marketplace.canva.com/EAFLeChYTOc/1/0/800w/canva-grey-simple-organizer-desktop-wallpaper-pWZzdm7daOI.jpg','低反差色块与统一间距。','Soft tonal zones and a shared gutter distinguish the date, schedule and desktop icon space.'],
  gardenjournal:['Botanical Journal · 压花跨页','Botanical Journal · pressed-flower spread','https://www.pinterest.com/emmajanenet/botanical-journal/','把花枝当作阅读线索，时间点从花冠向下，左右交替。','Follow the stem down the page, alternating between its left and right margins.'],
  scrapbook:["用户例图 · Mornin’ Matcha", "User reference · Mornin’ Matcha", null, "近景、合影和街拍在绿卡纸上紧叠，中央方笺压住半透明描图纸。行程成为照片和纸样旁的短注。", "Overlapping close-ups and rehearsal snapshots lead to a pinned square note and marginal captions."],
@@ -2402,6 +2404,118 @@ function drawTemplate(canvas,data,thumbnail=false){
 
 // Grey Simple Organizer uses tonal islands and regular gutters. Each format allocates
 // its own quiet zone before placing any text. Coordinates are in editing units.
+// Two poster editions based on the user's publishing and portfolio references.
+function printedBooks(x,y,w,h){
+  const stocks=['#f8c749','#162e43','#819fa2','#faf2dd','#e97d55','#223b35'];
+  const cell=w/stocks.length;
+  stocks.forEach((stock,i)=>{
+    const bx=x+i*cell,bw=Math.min(cell*.79,h*.74);
+    box(bx+2,y+2,bw,h,'#cecac1');box(bx,y,bw,h,stock);
+    g.save();g.beginPath();g.rect(bx,y,bw,h);g.clip();
+    g.strokeStyle=i%2?'#ffe7aa':'#29272c';g.lineWidth=2.6;
+    for(let j=0;j<5;j++){
+      g.beginPath();
+      if(i%3===0)g.arc(bx+bw*.68,y+h*.54,j*4+5,0,Math.PI*2);
+      else if(i%3===1){g.moveTo(bx-5,y+h*.4+j*5);g.lineTo(bx+bw+5,y+h*.13+j*5)}
+      else g.rect(bx+bw*.12+j*3,y+h*.3+j*2,bw*.8-j*3,h*.58-j*4);
+      g.stroke()
+    }
+    g.restore();
+    label(['SUN','N°02','PAUSE','FIELD','ECHO','AFTER'][i],bx+3,y+10,8,i%2?'#fff6da':'#171b21',serif,'bold','left',bw-6)
+  })
+}
+const screenPortraits=new WeakMap();
+function fourInkPortrait(image,x,y,w,h){
+  if(!image)return;
+  let plate=screenPortraits.get(image);
+  if(!plate){
+    const sample=document.createElement('canvas');sample.width=112;sample.height=88;
+    const c=sample.getContext('2d',{willReadFrequently:true});
+    const iw=image.naturalWidth||image.width,ih=image.naturalHeight||image.height;
+    if(!iw||!ih)return;
+    const side=Math.min(iw,ih);c.drawImage(image,0,0,side,side,0,0,112,88);
+    const px=c.getImageData(0,0,112,88).data;
+    plate=document.createElement('canvas');plate.width=448;plate.height=352;
+    const p=plate.getContext('2d');
+    const colors=['#d13559','#b27407','#3457a9','#208953'];
+    const tints=['#ffd9da','#ffe9a1','#d0e7ff','#cff2cb'];
+    for(let band=0;band<4;band++){
+      p.fillStyle=tints[band];p.fillRect(0,band*88,448,88);p.fillStyle=colors[band];p.beginPath();
+      for(let row=22*band;row<22*(band+1);row++)for(let col=0;col<112;col++){
+        const idx=(row*112+col)*4,luma=(px[idx]*.299+px[idx+1]*.587+px[idx+2]*.114)/255;
+        const r=.12+(1-luma)*2.9,cx=col*4+2,cy=row*4+2;p.moveTo(cx+r,cy);p.arc(cx,cy,r,0,2*Math.PI)
+      }
+      p.fill()
+    }
+    screenPortraits.set(image,plate)
+  }
+  g.drawImage(plate,x,y,w,h)
+}
+function paintPrintEdition(canvas,data,format){
+  const wide=format==='desktop', phone=format==='phone', red=data.style==='redpress';
+  const W=wide?1280:540,H=phone?1170:720,blocks=new Map(),slots=[];
+  const ink=red?'#d72725':'#252222', body=red?'#382121':'#322d31';
+  const x=wide?155:26, top=phone?176:28, hw=wide?460:W-2*x;
+  const agendaX=wide?654:x,agendaW=wide?W-agendaX-40:hw;
+  const agendaY=wide?78:phone?553:323;
+  renderingData=data;posterLocale=data.posterLocale||'en';
+  g=canvas.getContext('2d',{willReadFrequently:true});g.save();
+  try{
+    g.setTransform(canvas.width/W,0,0,canvas.height/H,0,0);rootMatrix=g.getTransform();capture=blocks;
+    box(0,0,W,H,red?'#efeee9':'#a5cbd7');
+    if(!red){
+      const wash=g.createLinearGradient(0,0,W*.8,H);
+      ['#a3cbd9','#c5e3df','#fae4be','#e8aaad'].forEach((c,i)=>wash.addColorStop(i/3,c));
+      box(0,0,W,H,wash);
+      box(x-8,top-8,hw+16,wide?H-top-24:agendaY-top-19,'#fbf5e8');
+      box(agendaX-8,agendaY-18,agendaW+16,H-agendaY-(phone?65:18),'#fcf7ec');
+    }
+    const dates=dateParts(data);
+    label(red?'DAY STAGE   /   INDEPENDENT PRESS':'DAY STAGE   /   PRINT ROOM',x,top+9,10,ink,mono,'bold');
+    field('date',()=>label(dates.full,x+hw,top+9,12,ink,mono,'bold','right',hw*.46));
+    if(red){
+      decoration('DAY EDITION',value=>label(value,x-3,top+(wide?154:110),wide?160:132,ink,sans,'900','left',hw));
+      printedBooks(x,top+(wide?198:119),hw,wide?90:phone?85:66);
+    }else{
+      const photo=data.heroPhotos?.[data.style]?window.paperHeroImage(data):window.journalArt?.vinylPress;
+      const pw=hw*.54, ph=wide?250:phone?238:183;
+      fourInkPortrait(photo,x,top+24,pw,ph);
+      const sx=x+pw+10,sw=hw-pw-12;
+      label('FIG. 01    /    FOUR INKS',sx,top+42,10,'#67594c',mono,'bold');
+      decoration('Studio',value=>label(value,sx+2,top+ph*.58,wide?72:60,'#30282a',serif,'italic','left',sw));
+      decoration('notes',value=>label(value,sx+17,top+ph*.82,wide?72:62,'#30282a','"DS Caveat", cursive','normal','left',sw-24));
+      ['#d14662','#deb64d','#5682b2','#448f67'].forEach((c,i)=>box(sx+i*17,top+ph+13,12,5,c));
+    }
+    const titleY=top+(wide?385:phone?289:231);
+    field('title',()=>textBlock(data.title||'My day',x,titleY,hw,wide?36:25,wide?40:26,2,ink,red?sans:serif,red?'bold':'italic'));
+    field('subtitle',()=>textBlock(data.subtitle||'',x,titleY+(wide?91:phone?52:41),hw,wide?18:13,wide?22:14,2,body,sans));
+    if(wide){
+      const fy=H-85;
+      if(red){box(x,fy,hw,46,ink);label('VOL. 01     /     PERSONAL ARCHIVE',x+12,fy+29,14,'#fff4e9',mono,'bold')}
+      else{line(x,fy,x+hw,fy,'#8a8580',1);label('A page from my day',x,fy+32,28,body,'"DS Caveat", cursive')}
+    }
+    label(red?'Contents':'Take one',agendaX,agendaY+18,red?28:32,ink,red?sans:'"DS Caveat", cursive','bold');
+    if(red){g.save();g.setLineDash([2,4]);line(agendaX+137,agendaY+13,agendaX+agendaW-45,agendaY+13,ink,2);g.restore()}
+    label(String(data.tasks.length).padStart(2,'0'),agendaX+agendaW,agendaY+18,20,ink,mono,'bold','right');
+    const n=data.tasks.length, cols=(wide&&n>4)||(!phone&&!wide&&n>4)?2:1;
+    const rows=Math.max(1,Math.ceil(n/cols)),gridY=agendaY+40,gap=16,cw=(agendaW-(cols-1)*gap)/cols;
+    const step=(H-(phone?78:25)-gridY)/rows;
+    data.tasks.forEach(([time,desc,id],i)=>{
+      const sx=agendaX+(i%cols)*(cw+gap),sy=gridY+Math.floor(i/cols)*step;
+      if(!red){
+        const tabH=Math.min(step-9,43);
+        box(sx,sy,23,tabH,'#302c2b');
+        box(sx,sy,23,4,['#dc8593','#dfb54e','#8bb2da','#87b698'][i%4]);
+        label(String(i+1).padStart(2,'0'),sx+11.5,sy+tabH*.66,11,'#fff6e7',mono,'bold','center');
+        g.save();g.setLineDash([2,4]);line(sx+10,sy-2,sx+cw-3,sy-2,'#bbb3a8',.8);g.restore()
+      }
+      const pad=red?0:30,slot={x:sx+pad,y:sy+3,w:cw-pad-2,h:step-8};slots.push(slot);
+      field('task-'+id,()=>agendaBlock(time,desc,slot.x,slot.y,slot.w,slot.h,wide?25:phone?23:20,body,red?ink:'#614f68',red?sans:serif,'500'))
+    });
+    capture=null;window.finishPaper(g,blocks,data);canvas.__dsLayout={w:W,h:H,format,slots}
+  }finally{capture=null;fieldKey=null;g.restore()}
+  return blocks
+}
 function paintFocus(canvas,data,format){
   const wide=format==='desktop', tall=format==='phone', W=wide?1280:540, H=tall?1170:720;
   const ink='#223c36', secondary='#425f55', stock='#f2f1e9', sage='#d4e1ce', cream='#fafaf4';
@@ -2459,7 +2573,8 @@ function paintFocus(canvas,data,format){
 
 // Native wallpaper layouts. Nothing here rasterizes or scales a completed poster.
 window.paintDaystageWallpaper=function(canvas,data){
- if(data.style==='focus')return paintFocus(canvas,data,data.outputFormat);
+ if(data.style==='redpress'||data.style==='inkfolio')return paintPrintEdition(canvas,data,data.outputFormat);
+  if(data.style==='focus')return paintFocus(canvas,data,data.outputFormat);
  renderingData=data;posterLocale=data.posterLocale||'en';
  const wide=data.outputFormat==='desktop',W=wide?1280:540,H=wide?720:1170,blocks=new Map(),k=data.style;
  const theme={backstage:['#fffef9','#211d23','#eb168d','#ddfa00'],scrapbook:['#d7c7a3','#292c1d','#54743d','#92a967'],editorial:['#f2eee1','#171816','#994962','#efa6bb'],spectral:['#2b893b','#ffffe6','#ffe434','#207a36'],rave:['#ddf45a','#15121d','#3328cc','#d6fc39'],zine:['#f0efe4','#1c2026','#415b79','#c1cad8'],bluejournal:['#e7e9df','#203b53','#285ea0','#adcddd'],traveljournal:['#f1e8d4','#342d28','#9c4937','#d5a86c'],gardenjournal:['#f6f0dd','#3f4635','#964e36','#c5ceb1'],mangajournal:['#faf6e9','#1b1b19','#796226','#e6c249']}[k];
@@ -2570,6 +2685,7 @@ window.paintDaystageWallpaper=function(canvas,data){
 // Keep the printed stock cached while a hand is moving text or a photograph.
 let stockCache=null;
 window.paintDaystage=function(canvas,data,thumbnail=false){
+  if(data.style==='redpress'||data.style==='inkfolio')return paintPrintEdition(canvas,data,'poster');
   if(data.style==='focus')return paintFocus(canvas,data,'poster');
   if(thumbnail||!window.canComposePaper(data.style)){
     return drawTemplate(canvas,data,thumbnail)

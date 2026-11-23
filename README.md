@@ -6,7 +6,7 @@ You’re the headliner. Give yourself a call sheet for an ordinary day or a whol
 
 ## Make your first poster
 
-- **Daily** — Enter up to eight plans, then choose one of eleven poster designs. Start with the 10:00 library shift and add the 14:00 rehearsal. The Focus design has optional checkboxes in the editor and on paper.
+- **Daily** — Enter up to eight plans, then choose one of thirteen poster designs, including Red Press and Studio Notes. Start with the 10:00 library shift and add the 14:00 rehearsal. The Focus design has optional checkboxes in the editor and on paper.
 - **Weekly** — Pick a week and enter up to fourteen plans across Monday–Sunday. Give each a day and an optional time. Several plans can share a day. The weekly layout shows days you leave open, too.
 - Choose **Poster**, **Phone wallpaper**, or **Computer wallpaper** and download the PNG. Use your device’s wallpaper settings or print the file. Poster, phone and desktop exports measure 1080 × 1440, 1080 × 2340 and 2560 × 1440 pixels, respectively.
 
