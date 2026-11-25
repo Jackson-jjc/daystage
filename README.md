@@ -40,3 +40,4 @@ npx playwright install chromium
 node scripts/weekly-workflow-qa.cjs
 ```
 
+The optional hosted counters use worker/index.mjs and the two schemas in drizzle/. The worker serves the same index.html, embedded at build time in place of __DAYSTAGE_HTML__. GitHub Pages serves the static editor directly.
